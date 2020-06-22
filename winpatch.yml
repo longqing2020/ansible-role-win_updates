@@ -1,2 +1,6 @@
-tasks:
-  - include: tasks/main.yml
+---
+- name: Prepare execution-generic environment
+  hosts: all
+  gather_facts: false
+  tasks:
+    - include: tasks/main.yml
