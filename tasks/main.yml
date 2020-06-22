@@ -2,7 +2,7 @@
 
 - name: "Install Windows updates."
   win_updates:
-    category_names: "{{ win_updates_category_names }}"
+    category_names: "SecurityUpdates"
   register: win_updates_result
   failed_when:
     - win_updates_result.failed is defined
@@ -22,7 +22,7 @@
     # Let it fail this time if reboot didn't work.
   - name: "Install Windows updates again."
     win_updates:
-      category_names: "{{ win_updates_category_names }}"
+      category_names: "SecurityUpdates"
     register: win_updates_result
 
   when:
