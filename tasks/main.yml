@@ -1,15 +1,12 @@
 ---
 
 - name: "Install Windows updates."
-  vars:
-    win_updates_reboot:"false" 
   win_updates:
     category_names: "SecurityUpdates"
   register: win_updates_result
   failed_when:
     - win_updates_result.failed is defined
     - win_updates_result.failed
-    - not win_updates_reboot
 
 - block:
   # Attempting some error handling.
@@ -28,7 +25,6 @@
     register: win_updates_result
 
   when:
-    - win_updates_reboot
     - win_updates_result.failed is defined
     - win_updates_result.failed
 
