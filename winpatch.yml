@@ -1,2 +1,2 @@
 tasks:
-  - include: tasks/foo.yml
+  - include: tasks/main.yml
