@@ -1,6 +1,8 @@
 ---
 
 - name: "Install Windows updates."
+  vars:
+    win_updates_reboot:"false" 
   win_updates:
     category_names: "SecurityUpdates"
   register: win_updates_result
