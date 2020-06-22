@@ -3,5 +3,4 @@
   hosts: all
   gather_facts: false
   tasks:
-    - import_tasks: defaults/main.yml
     - include: tasks/main.yml
